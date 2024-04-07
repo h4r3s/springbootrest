@@ -1,3 +1,7 @@
+-- schema.sql
+-- SQL script to define the database schema.
+
+-- Creating the PRICES table to store pricing information.
 CREATE TABLE IF NOT EXISTS PRICES (
     ID BIGINT AUTO_INCREMENT PRIMARY KEY,
     BRAND_ID BIGINT NOT NULL,
