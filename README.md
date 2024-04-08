@@ -83,18 +83,19 @@ The project uses an H2 in-memory database. The schema and initial data are defin
 
 ## Project Structure
 
-El proyecto sigue una estructura de directorios organizada para facilitar la gestión del código y los recursos.
-A continuación se muestra la estructura de directorios principal y sus contenidos:
+The project follows an organized directory structure to facilitate code and resource management. 
+Below is the main directory structure and its contents:
 
-- `src/main/java`: Contiene el código fuente de la aplicación Java.
-  - `com.jorgejimenezsl.springbootrest`: Paquete principal de la aplicación.
-    - `controller`: Contiene los controladores REST que manejan las solicitudes HTTP.
-      - `domain`: Contiene las clases de dominio, como Price, que representan las entidades de la base de datos.
-        - `repository`: Contiene interfaces de repositorio que definen las operaciones de base de datos.
-          - `service`: Contiene las interfaces y las implementaciones de los servicios de la aplicación.
-  - `src/main/resources`: Contiene archivos de recursos de la aplicación, como archivos de configuración y plantillas de vista (si corresponde).
-  - `src/test/java`: Contiene los archivos de prueba de la aplicación Java.
-  - `pom.xml`: Archivo POM de Maven que define las dependencias y la configuración del proyecto.
+- `src/main/java`: Contains the Java application source code.
+  - `com.jorgejimenezsl.springbootrest`: Main package of the application.
+    - `controller`: Contains REST controllers handling HTTP requests.
+      - `domain`: Contains domain classes such as Price, representing database entities.
+        - `repository`: Contains repository interfaces defining database operations.
+          - `service`: Contains interfaces and implementations of application services.
+  - `src/main/resources`: Contains application resource files such as configuration files and view templates (if applicable).
+  - `src/test/java`: Contains Java application test files.
+  - `pom.xml`: Maven POM file defining project dependencies and configuration.
+
 
 ## Setup
 1. Clone the repository
