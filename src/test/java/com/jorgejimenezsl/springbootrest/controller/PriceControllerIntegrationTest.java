@@ -14,8 +14,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import java.time.LocalDateTime;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Integration tests for the PriceController class.
@@ -27,9 +25,6 @@ public class PriceControllerIntegrationTest {
 
     @Autowired
     private MockMvc mockMvc;
-
-    // Define a logger
-    private static final Logger logger = LoggerFactory.getLogger(PriceControllerIntegrationTest.class);
 
     /**
      * Test case to validate the behavior of the '/prices' endpoint

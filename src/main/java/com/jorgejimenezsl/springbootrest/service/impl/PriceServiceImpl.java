@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * Implementation of the PriceService interface.
+ * This class provides methods to retrieve price information.
  */
 @Service
 public class PriceServiceImpl implements PriceService {
@@ -35,10 +36,11 @@ public class PriceServiceImpl implements PriceService {
      * @return A list of Price entities matching the criteria.
      */
     @Override
-    public List<Price> findPricesByProductIdAndBrandIdAndDate(
-            Long productId,
-            Long brandId,
-            LocalDateTime date) {
-        return priceRepository.findPricesByProductIdAndBrandIdAndStartDate(productId, brandId, date);
+    public List<Price> findPricesByProductIdAndBrandIdAndDate(Long productId, Long brandId, LocalDateTime date) {
+        return priceRepository
+                .findByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(
+                        productId,
+                        brandId, date,
+                        date);
     }
 }
