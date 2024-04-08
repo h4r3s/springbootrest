@@ -29,7 +29,7 @@ public class PriceControllerIntegrationTest {
     /**
      * Test case to validate the behavior of the '/prices' endpoint
      * when querying prices at 10:00 AM on day 14.
-     * Expects an empty array in the response body.
+     * Expects one record with correct values.
      */
     @Test
     public void testGetPricesAt10AMOnDay14() throws Exception {
@@ -41,14 +41,16 @@ public class PriceControllerIntegrationTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$").isArray())
-                .andExpect(jsonPath("$.length()").value(0));
-
+                .andExpect(jsonPath("$.length()").value(1))
+                .andExpect(jsonPath("$[0].startDate").value("2020-06-14T00:00:00"))
+                .andExpect(jsonPath("$[0].endDate").value("2020-12-31T23:59:59"))
+                .andExpect(jsonPath("$[0].price").value(35.50));
     }
 
     /**
      * Test case to validate the behavior of the '/prices' endpoint
      * when querying prices at 4:00 PM on day 14.
-     * Expects an empty array in the response body.
+     * Expects one record with correct values.
      */
     @Test
     public void testGetPricesAt4PMOnDay14() throws Exception {
@@ -60,13 +62,16 @@ public class PriceControllerIntegrationTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$").isArray())
-                .andExpect(jsonPath("$.length()").value(0));
+                .andExpect(jsonPath("$.length()").value(1))
+                .andExpect(jsonPath("$[0].startDate").value("2020-06-14T15:00:00"))
+                .andExpect(jsonPath("$[0].endDate").value("2020-06-14T18:30:00"))
+                .andExpect(jsonPath("$[0].price").value(25.45));
     }
 
     /**
      * Test case to validate the behavior of the '/prices' endpoint
      * when querying prices at 9:00 PM on day 14.
-     * Expects an empty array in the response body.
+     * Expects one record with correct values.
      */
     @Test
     public void testGetPricesAt9PMOnDay14() throws Exception {
@@ -78,13 +83,16 @@ public class PriceControllerIntegrationTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$").isArray())
-                .andExpect(jsonPath("$.length()").value(0));
+                .andExpect(jsonPath("$.length()").value(1))
+                .andExpect(jsonPath("$[0].startDate").value("2020-06-14T00:00:00"))
+                .andExpect(jsonPath("$[0].endDate").value("2020-12-31T23:59:59"))
+                .andExpect(jsonPath("$[0].price").value(35.50));
     }
 
     /**
      * Test case to validate the behavior of the '/prices' endpoint
      * when querying prices at 10:00 AM on day 15.
-     * Expects an empty array in the response body.
+     * Expects one record with correct values.
      */
     @Test
     public void testGetPricesAt10AMOnDay15() throws Exception {
@@ -96,13 +104,16 @@ public class PriceControllerIntegrationTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$").isArray())
-                .andExpect(jsonPath("$.length()").value(0));
+                .andExpect(jsonPath("$.length()").value(1))
+                .andExpect(jsonPath("$[0].startDate").value("2020-06-15T00:00:00"))
+                .andExpect(jsonPath("$[0].endDate").value("2020-06-15T11:00:00"))
+                .andExpect(jsonPath("$[0].price").value(30.50));
     }
 
     /**
      * Test case to validate the behavior of the '/prices' endpoint
      * when querying prices at 9:00 PM on day 16.
-     * Expects an empty array in the response body.
+     * Expects one record with correct values.
      */
     @Test
     public void testGetPricesAt9PMOnDay16() throws Exception {
@@ -114,7 +125,9 @@ public class PriceControllerIntegrationTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$").isArray())
-                .andExpect(jsonPath("$.length()").value(0));
+                .andExpect(jsonPath("$.length()").value(1))
+                .andExpect(jsonPath("$[0].startDate").value("2020-06-15T16:00:00"))
+                .andExpect(jsonPath("$[0].endDate").value("2020-12-31T23:59:59"))
+                .andExpect(jsonPath("$[0].price").value(38.95));
     }
-
 }
