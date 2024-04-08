@@ -38,7 +38,7 @@ public class PriceServiceImpl implements PriceService {
     @Override
     public List<Price> findPricesByProductIdAndBrandIdAndDate(Long productId, Long brandId, LocalDateTime date) {
         return priceRepository
-                .findByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(
+                .findFirstByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(
                         productId,
                         brandId, date,
                         date);
